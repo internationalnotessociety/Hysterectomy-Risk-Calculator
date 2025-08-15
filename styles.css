@@ -1,0 +1,29 @@
+.input-container {
+    display: grid;
+    grid-template-columns: 175px 50px;
+    grid-template-rows: repeat(2, 20px);
+    grid-gap: 1px;
+    padding-bottom: 25px;
+}
+
+.radio-container {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    width: 240px;
+}
+
+.block-container {
+    display: grid;
+    grid-template-columns: 260px 260px;
+}
+
+.result-box {
+    padding-top: 5px;
+    padding-left: 5px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    width: 240px;
+    padding-bottom: 5px;
+}
