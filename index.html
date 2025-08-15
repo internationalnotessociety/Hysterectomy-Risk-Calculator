@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<h1>Risk of complications after minimally invasive hysterectomy</h1>
+<h4 style="margin-top: -20px;">Defined as any deviation from the normal peri- or post-operative course (perioperative or postoperative complication, conversion, blood loss more than 300 ml, re-operation, need of postoperative antibiotics)</h4>
+<div class="block-container">
+    <div>
+<div class=input-container>
+    <label for="age">Age (years):</label><input type="text" id="age" size="1" maxlength="3"/>
+    <Label for="height">Height (cm):</Label>
+    <input type="text" onkeyup=calculateBMI() id="height" size="1" maxlength="3"/>
+    <Label for="weight">Weight (kg)</Label>
+    <input type="text" onkeyup=calculateBMI() id="weight" size="1" maxlength="3"/>
+    <Label for="bmi">Body Mass Index (kg/m<sup>2</sup>)</Label>
+    <input type="text" onkeyup=clearHeightAndWeight() id="bmi" size="1" maxlength="3"/>
+
+
+</div>
+<Label>Reproductive history</Label>
+<div class=radio-container>
+
+    <input type="radio" id="nulliparous" name="repr" value="nulliparous">
+    <label for="nulliparous">Nulliparous</label><br>
+    <input type="radio" id="parous" name="repr" value="parous" checked>
+    <label for="parous">Parous, no cesarean</label><br>
+    <input type="radio" id="cesarean" name="repr" value="cesarean">
+    <label for="cesarean">Cesarean section</label>
+</div>
+<br>
+
+<Label>Estimated uterus weight</Label>
+<div class=radio-container>
+
+    <input type="radio" id="leq300" name="uweight" value="leq300" checked>
+    <label for="leq300"><=300 g</label><br>
+    <input type="radio" id="from301to500" name="uweight" value="from301to500">
+    <label for="from301to500">301 - 500 g</label><br>
+    <input type="radio" id="from501to1000" name="uweight" value="from501to1000">
+    <label for="from501to1000">501 - 1000 g</label><br>
+    <input type="radio" id="g1000" name="uweight" value="g1000">
+    <label for="g1000">>1000 g</label><br>
+
+</div>
+<br>
+
+<Label>Indication for hysterectomy</Label>
+<div class=radio-container>
+
+    <input type="radio" id="pain" name="indication" value="pain" checked>
+    <label for="pain">Menorrhagia/pain/dysmenorrhea</label><br>
+    <input type="radio" id="prolapse" name="indication" value="prolapse">
+    <label for="prolapse">Prolapse</label><br>
+    <input type="radio" id="endometriosis" name="indication" value="endometriosis">
+    <label for="endometriosis">Endometriosis</label><br>
+    <input type="radio" id="bleeding" name="indication" value="bleeding">
+    <label for="bleeding">Post-menopausal bleeding</label><br>
+    <input type="radio" id="dysplasia" name="indication" value="dysplasia">
+    <label for="dysplasia">Cervical dysplasia</label><br>
+    <input type="radio" id="other" name="indication" value="other">
+    <label for="other">Other</label><br>
+
+</div>
+    </div>
+
+<div>
+
+<button onclick=showResult()>Calculate risk</button>
+<p id="result" class="result-box">Laparoscopy:<br>
+    Robot:<br>
+    Vaginal:</p>
+    <button onclick=clearInput()>Clear all</button>
+</div>
+</div>
+<!--
+<button py-click="calculate">Calculate</button>
+<div id="output" style="height:50px"></div>
+<p id="demo"></p>
+-->
+</body>
+</html>
